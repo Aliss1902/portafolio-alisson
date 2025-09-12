@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(#934949, #b49595e4);
+    color: #fffefe;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+section h2 {
+    border-bottom: 2px solid #ffaf40;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: #3b3313;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    /* que no se parta el texto */
+    overflow: hidden;
+    /* oculta el texto fuera del área */
+    border-right: 3px solid #ffdd59;
+    /* el “cursor” */
+    width: 0;
+    /* empieza vacío */
+    animation: typing 4s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+/* Animación para escribir el texto */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #ffdd59
+    }
+}
+
+
+.robot {
+    position: absolute;
+    bottom: 60px;
+    left: 150px;
+    width: 400px;
+    /* tamaño del robot */
+    animation: caminar 10s linear infinite;
+}
+
+@keyframes caminar {
+    from {
+        left: 800px;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+
+/* estilos de trageta mejorada */
+/* ----- Estilos generales ----- */
+
+
+
+
+ul.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+/* ----- Tarjetas ----- */
+ul.project-list li {
+    transition: transform 0.3s ease, flex 0.3s ease;
+}
+
+ul.project-list li article {
+    padding: 20px;
+    border-radius: 15px;
+    color: rgb(15, 15, 15);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ----- Colores diferentes para cada tarjeta ----- */
+ul.project-list li:nth-child(1) article {
+    background: #fecdcd;
+    /* rojo suave */
+}
+
+ul.project-list li:nth-child(2) article {
+    background: #c5e5ff;
+    /* azul */
+}
+
+ul.project-list li:nth-child(3) article {
+    background: #cdf9d6;
+    /* verde */
+}
+
+ul.project-list li:nth-child(4) article {
+    background: #fde6cd;
+    /* naranja */
+}
+
+/* ----- Títulos de los proyectos ----- */
+ul.project-list h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+/* ----- Descripción ----- */
+ul.project-list p {
+    font-size: 1.2rem;
+    /* más grande */
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* ----- Botón "Ver proyecto" ----- */
+ul.project-list a {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #121212;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* letra más grande */
+    transition: background 0.3s ease;
+}
+
+ul.project-list a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ----- Animación al hover/click ----- */
+ul.project-list li[data-active="true"] {
+    transform: scale(1.05);
+}

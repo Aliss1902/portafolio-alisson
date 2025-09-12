@@ -1,0 +1,253 @@
+:root {
+    --coffee: #6B4F3A;
+    --coffee-2: #8A5A3B;
+    --mustard: #E0B04E;
+    --soft-mustard: #E6C767;
+    --moss: #355E3B;
+    --moss-2: #2E4A3B;
+    --cream: #FFF8E6;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    background: radial-gradient(1000px 500px at 10% -10%, #fff 0%, var(--cream) 60%, #fff 100%);
+    color: #2b2b2b;
+    padding-top: 50px;
+
+}
+
+header {
+    text-align: center;
+    padding: 2.25rem 1rem 1rem;
+}
+.imagefondo nav.navbar {
+    background-color: #520202ee;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+h1 {
+    margin: 0;
+    color: var(--coffee);
+    letter-spacing: .4px;
+}
+
+.grid {
+    max-width: 1000px;
+    margin: 1.5rem auto 2.5rem;
+    padding: 0 1rem 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width:700px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:1000px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
+    .card {
+        max-width: 300px;
+    }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .card {
+        max-width: 350px;
+    }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 767px) {
+    .card {
+        max-width: 100%;
+        /* ocupa todo el ancho en móviles */
+    }
+}
+
+
+.imagefondo {
+
+    background-image:
+        linear-gradient(rgba(0, 0, 255, 0.138), rgba(81, 0, 255, 0.092)),
+        url("image/venom-tom-.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+
+}
+
+.imagefondo p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    color: #fffdfd91;
+}
+
+.imagefondo h1.c {
+    font-family: "Metal Mania", system-ui;
+    ;
+    /* Reemplaza con tu fuente elegida */
+    font-size: 10rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #4f0608b1, #480d91b1);
+    /* Degradado dorado */
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 200px;
+    margin: 0;
+}
+
+
+
+/* Fondo de la sección */
+.cartelelera {
+    background-image: linear-gradient(to bottom, #410808ad, #5e168cad),
+    url(image/fondo2.jpg);
+    padding: 40px;
+    
+}
+
+.cartelelera h5.card-title{
+    color: #fbf9fc;
+}
+.cartelelera p.card-text{
+    color: #fdfdff;
+}
+
+.cartelelera h1.text {
+
+    color: #faf8f8;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.cartelelera h1.text::after {
+    content: "";
+    display: block;
+    width: 90%;
+    /* un poquito más largo que el texto */
+    height: 3px;
+    /* grosor de la línea */
+    background-color: #faf8f8;
+    /* color de la línea */
+    margin: 12px auto 19px;
+    /* separación arriba/abajo */
+}
+
+/* Estilo base de las tarjetas */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* Efecto al pasar el mouse en toda la tarjeta */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+    transition: transform 0.5s ease;
+}
+
+/* Zoom en la imagen al pasar el mouse */
+.card:hover img {
+    transform: scale(1.1);
+    /* agranda un poquito */
+}
+
+/* Cuerpo de la tarjeta */
+.card-body1 {
+    background-color: #450911;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body1 {
+    background-color: #3c3cd2;
+}
+.card-body2 {
+    background-color: #3c3cd2;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body2 {
+    background-color: #450911;
+}
+.card-body3 {
+    background-color: #980101;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body3 {
+    background-color: #191818;
+}
+
+.card-body4 {
+    background-color: #b75b05;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body4 {
+    background-color: #5e5c5c;
+}
+.card-body5 {
+    background-color: #0f0f10;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body5 {
+    background-color: #2f5bc2;
+}
+.card-body6 {
+    background-color: #3ca8d2;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Cambia el color del cuerpo al pasar el mouse */
+.card:hover .card-body6 {
+    background-color: #171616;
+}
+
+
+.card {
+    max-width: 300px;
+    /* ancho máximo de cada tarjeta */
+    margin: 0 auto;
+    /* centra cada tarjeta dentro de su columna */
+}
