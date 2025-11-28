@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styless.css">
+    <title>Pomodoro Cozy</title>
+</head>
+<body>
+
+    <!-- Contenedor general -->
+    <main class="pomodoro-app">
+
+        <!-- Encabezado -->
+        <header>
+            <h1>AliPomodoro</h1>
+            <button id="modoOscuroBtn">🌙</button>
+        </header>
+
+        <!-- Configuración -->
+        <section class="config">
+            <h2>Configurar tiempo</h2>
+
+            <div class="inputs">
+                <label>
+                    Pomodoro:
+                    <input type="number" id="pomodoroInput" value="25" min="1">
+                </label>
+
+                <label>
+                    Descanso corto:
+                    <input type="number" id="shortBreakInput" value="5" min="1">
+                </label>
+
+                <label>
+                    Descanso largo:
+                    <input type="number" id="longBreakInput" value="15" min="1">
+                </label>
+            </div>
+
+            <button id="guardarConfigBtn">Guardar configuración</button>
+        </section>
+
+        
+
+        <!-- Temporizador principal -->
+        <section class="timer">
+            <h2 id="modoActual">Pomodoro</h2>
+
+            <div id="displayTiempo">25:00</div>
+
+            <div class="botones">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+
+            <!-- Animación (se activará con JS) -->
+            <div id="animacion" class="animacion"></div>
+        </section>
+
+        
+
+        <!-- Contador de ciclos -->
+        <section class="ciclos">
+            <h2>Ciclos completados</h2>
+            <p id="contadorCiclos">0</p>
+        </section>
+
+        <section class="tareas">
+    <h2>📋 Tareas</h2>
+
+    <div class="agregar-tarea">
+        <input type="text" id="inputTarea" placeholder="Escribe una tarea...">
+        <button id="btnAgregarTarea">Agregar</button>
+    </div>
+
+    <ul id="listaTareas"></ul>
+</section>
+        
+
+        <!-- Audio de notificación -->
+        <audio id="audioFin">
+            <source src="sonido.mp3" type="audio/mpeg">
+        </audio>
+        
+
+    </main>
+
+    <script src="funciones.js"></script>
+    <script src="tareas.js"></script>
+</body>
+</html>

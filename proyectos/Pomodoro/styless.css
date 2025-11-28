@@ -1,0 +1,288 @@
+/* 
+   PALETA COZY
+*/
+
+:root {
+    --cafe-claro: #DCC7AA;
+    --cafe-oscuro: #5D473A;
+    --verde-suave: #A3C9A8;
+    --verde-oscuro: #4A7856;
+    --rojo-cozy: #C55A4E;
+
+    background-image: url(img/fondo1.jpg);
+    --texto: #3A2F2A;
+}
+
+/* MODO OSCURO */
+.dark {
+    background-image: url(img/fondo2.jpg);
+    --texto: #E7E1DA;
+    --cafe-claro: #6D5844;
+    --cafe-oscuro: #46372D;
+    --verde-suave: #7BA88E;
+    --verde-oscuro: #355C45;
+    --rojo-cozy: #A64A40;
+}
+
+/* 
+   ESTILOS GENERALES */
+
+/* Contenedor general de toda la app */
+.pomodoro-app {
+    display: grid;
+    grid-template-columns: 1fr 350px;  /* izquierda y derecha */
+    gap: 30px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Modo responsive */
+@media (max-width: 900px) {
+    .pomodoro-app {
+        grid-template-columns: 1fr; /* se apilan */
+    }
+}
+
+
+
+/* 
+   HEADER
+ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+}
+
+#modoOscuroBtn {
+    background: var(--cafe-oscuro);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* 
+   CONFIGURACIÓN
+*/
+
+.config {
+    background: var(--cafe-claro);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.inputs label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.inputs input {
+    width: 70px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid var(--cafe-oscuro);
+    background: #fff;
+}
+
+#guardarConfigBtn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: var(--verde-oscuro);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 
+   TEMPORIZADOR
+*/
+
+.timer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#displayTiempo {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 20px 0;
+    background: var(--cafe-claro);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+.botones button {
+    padding: 10px 20px;
+    margin: 10px;
+    background: var(--rojo-cozy);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+   ANIMACIÓN
+*/
+
+#animacion {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto 0;
+    border-radius: 50%;
+    border: 5px solid var(--verde-suave);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s;
+}
+
+#animacion.activo {
+    opacity: 1;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.8); }
+}
+
+/* 
+   CICLOS
+ */
+
+.ciclos {
+    margin-top: 30px;
+    background: var(--cafe-claro);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* 
+   RESPONSIVE
+ */
+
+@media (max-width: 480px) {
+    #displayTiempo {
+        font-size: 3rem;
+    }
+}
+
+
+/* 
+   TAREAS
+ */
+
+.tareas {
+    background: var(--cafe-claro);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.tareas h2 {
+    margin-top: 0;
+}
+
+.agregar-tarea {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#inputTarea {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--cafe-oscuro);
+    background: #fff;
+}
+
+#btnAgregarTarea {
+    background: var(--verde-oscuro);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#listaTareas {
+    list-style: none;
+    padding: 0;
+}
+
+.tarea-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--fondo);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--verde-suave);
+}
+
+.tarea-item.completada {
+    text-decoration: line-through;
+    opacity: 0.6;
+    border-left-color: var(--verde-oscuro);
+}
+
+.tarea-item button {
+    background: var(--rojo-cozy);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* 
+   LAYOUT EN DOS COLUMNAS
+*/
+
+/* Contenedor general de toda la app */
+.pomodoro-app {
+    display: grid;
+    grid-template-columns: 1fr 350px;  /* izquierda y derecha */
+    gap: 30px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Modo responsive */
+@media (max-width: 900px) {
+    .pomodoro-app {
+        grid-template-columns: 1fr; /* se apilan */
+    }
+}
+
+section {
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-4px);
+}
